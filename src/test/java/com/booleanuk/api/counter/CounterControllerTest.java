@@ -45,4 +45,26 @@ public class CounterControllerTest {
         cC.decrementCustomCounter(id);
         Assertions.assertEquals(0, cC.customCounter.get(id));
     }
+
+    @Test
+    public void makeNegativeCustomCounterTest() {
+        CounterController cC = new CounterController();
+
+        String id = "negative";
+
+        cC.decrementCustomCounter(id);
+
+        Assertions.assertEquals(-1, cC.customCounter.get(id));
+    }
+
+    @Test
+    public void makePositiveCustomCounterTest() {
+        CounterController cC = new CounterController();
+
+        String id = "positive";
+
+        cC.incrementCustomCounter(id);
+
+        Assertions.assertEquals(1, cC.customCounter.get(id));
+    }
 }
